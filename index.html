@@ -11,16 +11,15 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Main CSS (cache-busted) -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
+  <!-- Background KV -->
+  <div class="bg-logo">KV</div>
+
   <main class="container">
-
-    <!-- Background KV -->
-    <div class="bg-logo">KV</div>
-
 
     <!-- Header -->
     <header>
@@ -46,26 +45,26 @@
       </a>
     </section>
 
-    <!-- MEMES BUTTON (FIXED) -->
+    <!-- MEMES BUTTON -->
     <section class="cta">
       <a href="https://kalitaverse.in" target="_blank" class="memes-btn">
         MEMES
       </a>
     </section>
 
+    <!-- FESTIVAL BAR -->
     <div class="festival-bar">
-  <button class="fest-btn diwali" onclick="fest('diwali')">🪔 Diwali</button>
-  <button class="fest-btn holi" onclick="fest('holi')">🎨 Holi</button>
-  <button class="fest-btn dussehra" onclick="fest('dussehra')">🏹 Dussehra</button>
-  <button class="fest-btn navratri" onclick="fest('navratri')">💃 Navratri</button>
-  <button class="fest-btn bihu" onclick="fest('bihu')">🌾 Bihu</button>
-  <button class="fest-btn kumbh" onclick="fest('kumbh')">🔱 Kumbh Mela</button>
-  <button class="fest-btn pongal" onclick="fest('pongal')">🌸 Pongal</button>
-  <button class="fest-btn onam" onclick="fest('onam')">🐍 Onam</button>
-  <button class="fest-btn eid" onclick="fest('eid')">🌙 Eid</button>
-  <button class="fest-btn christmas" onclick="fest('christmas')">🎄 Christmas</button>
-</div>
-
+      <button class="fest-btn diwali" onclick="fest('diwali')">🪔 Diwali</button>
+      <button class="fest-btn holi" onclick="fest('holi')">🎨 Holi</button>
+      <button class="fest-btn dussehra" onclick="fest('dussehra')">🏹 Dussehra</button>
+      <button class="fest-btn navratri" onclick="fest('navratri')">💃 Navratri</button>
+      <button class="fest-btn bihu" onclick="fest('bihu')">🌾 Bihu</button>
+      <button class="fest-btn kumbh" onclick="fest('kumbh')">🔱 Kumbh Mela</button>
+      <button class="fest-btn pongal" onclick="fest('pongal')">🌸 Pongal</button>
+      <button class="fest-btn onam" onclick="fest('onam')">🐍 Onam</button>
+      <button class="fest-btn eid" onclick="fest('eid')">🌙 Eid</button>
+      <button class="fest-btn christmas" onclick="fest('christmas')">🎄 Christmas</button>
+    </div>
 
     <!-- Socials -->
     <section class="socials">
@@ -84,7 +83,11 @@
     </section>
 
     <footer>© 2026 KalitaVerse</footer>
+
   </main>
+
+  <!-- FESTIVAL JS (IMPORTANT) -->
+  <script src="festive.js?v=3"></script>
 
 </body>
 </html>
