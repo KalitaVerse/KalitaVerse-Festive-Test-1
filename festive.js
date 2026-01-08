@@ -1,27 +1,27 @@
-/* =========================
-   SOUND HELPER (IMPROVED)
-   ========================= */
+// === CONFIRM LOAD ===
+console.log("festive.js loaded");
 
+// =========================
+// SOUND SYSTEM
+// =========================
 const sounds = {};
 let muted = false;
 
 function playSound(name) {
   if (muted) return;
 
-  // reuse audio object
   if (!sounds[name]) {
     sounds[name] = new Audio(`assets/sounds/${name}.mp3`);
     sounds[name].volume = 0.7;
   }
 
-  sounds[name].currentTime = 0; // prevent overlap
+  sounds[name].currentTime = 0;
   sounds[name].play();
 }
 
-/* =========================
-   RESET HELPERS
-   ========================= */
-
+// =========================
+// RESET EFFECTS
+// =========================
 function resetEffects() {
   document.body.classList.remove(
     "diwali-glow",
@@ -37,10 +37,9 @@ function resetEffects() {
   document.body.style.boxShadow = "";
 }
 
-/* =========================
-   MAIN FESTIVAL HANDLER
-   ========================= */
-
+// =========================
+// MAIN HANDLER
+// =========================
 function fest(name) {
   resetEffects();
   playSound("pop");
@@ -108,11 +107,9 @@ function fest(name) {
   }
 }
 
-/* =========================
-   OPTIONAL: MUTE TOGGLE
-   ========================= */
-
+// =========================
+// OPTIONAL MUTE
+// =========================
 function toggleMute() {
   muted = !muted;
-  return muted;
 }
