@@ -252,4 +252,23 @@ footer {
 .holi { background: linear-gradient(135deg, #ff4ecd, #4caf50); }
 .navratri { background: linear-gradient(135deg, #9c27b0, #673ab7); }
 .eid { background: linear-gradient(135deg, #00c853, #009688); }
+.diwali-glow {
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: inset 0 0 40px rgba(255,140,0,0.4); }
+  to { box-shadow: inset 0 0 80px rgba(255,87,34,0.6); }
+}
+
+.navratri-shake {
+  animation: shake 0.2s infinite;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(1deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-1deg); }
+}
 
