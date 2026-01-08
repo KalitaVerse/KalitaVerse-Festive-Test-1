@@ -217,3 +217,39 @@ footer {
   font-size: 0.75rem;
   color: #9ca3af;
 }
+.festival-bar {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.fest-btn {
+  font-size: 1.2rem;
+  padding: 18px 28px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  background: #1f1f1f;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fest-btn:hover {
+  transform: scale(1.08) rotate(-1deg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.fest-btn:active {
+  transform: scale(0.95);
+}
+
+/* Festival colors */
+.diwali { background: linear-gradient(135deg, #ff9800, #ff5722); }
+.holi { background: linear-gradient(135deg, #ff4ecd, #4caf50); }
+.navratri { background: linear-gradient(135deg, #9c27b0, #673ab7); }
+.eid { background: linear-gradient(135deg, #00c853, #009688); }
+
