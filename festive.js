@@ -1,11 +1,40 @@
 /* =========================
-   SOUND HELPER
+   SOUND HELPER (IMPROVED)
    ========================= */
 
+const sounds = {};
+let muted = false;
+
 function playSound(name) {
-  const audio = new Audio(`assets/sounds/${name}.mp3`);
-  audio.volume = 0.7;
-  audio.play();
+  if (muted) return;
+
+  // reuse audio object
+  if (!sounds[name]) {
+    sounds[name] = new Audio(`assets/sounds/${name}.mp3`);
+    sounds[name].volume = 0.7;
+  }
+
+  sounds[name].currentTime = 0; // prevent overlap
+  sounds[name].play();
+}
+
+/* =========================
+   RESET HELPERS
+   ========================= */
+
+function resetEffects() {
+  document.body.classList.remove(
+    "diwali-glow",
+    "navratri-shake",
+    "bihu-dance",
+    "bihu-glow",
+    "kumbh-glow",
+    "kumbh-wave",
+    "snow"
+  );
+
+  document.body.style.background = "";
+  document.body.style.boxShadow = "";
 }
 
 /* =========================
@@ -13,9 +42,7 @@ function playSound(name) {
    ========================= */
 
 function fest(name) {
-  // Reset effects
-  document.body.className = "";
-
+  resetEffects();
   playSound("pop");
 
   switch (name) {
@@ -39,9 +66,7 @@ function fest(name) {
     case "dussehra":
       document.body.style.boxShadow =
         "inset 0 0 80px rgba(255,80,0,0.5)";
-      setTimeout(() => {
-        document.body.style.boxShadow = "";
-      }, 1200);
+      setTimeout(resetEffects, 1200);
       break;
 
     case "navratri":
@@ -53,12 +78,12 @@ function fest(name) {
 
     case "bihu":
       playSound("dhol");
-      document.body.classList.add("bihu-dance","bihu-glow");
+      document.body.classList.add("bihu-dance", "bihu-glow");
       break;
 
     case "kumbh":
       playSound("bell");
-      document.body.classList.add("kumbh-glow","kumbh-wave");
+      document.body.classList.add("kumbh-glow", "kumbh-wave");
       break;
 
     case "pongal":
@@ -81,4 +106,13 @@ function fest(name) {
       document.body.classList.add("snow");
       break;
   }
+}
+
+/* =========================
+   OPTIONAL: MUTE TOGGLE
+   ========================= */
+
+function toggleMute() {
+  muted = !muted;
+  return muted;
 }
