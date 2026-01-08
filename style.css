@@ -217,54 +217,97 @@ footer {
   font-size: 0.75rem;
   color: #9ca3af;
 }
+/* =========================
+   FESTIVAL BAR (SCHLATT STYLE)
+   ========================= */
+
 .festival-bar {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   justify-content: center;
-  margin: 40px 0;
+  align-items: center;
+  margin: 32px auto;
+  padding: 10px 14px;
   flex-wrap: wrap;
+  max-width: 1200px;
 }
 
+/* =========================
+   BASE BUTTON STYLE
+   ========================= */
+
 .fest-btn {
-  font-size: 1.2rem;
-  padding: 18px 28px;
+  padding: 14px 26px;
   border-radius: 999px;
   border: none;
   cursor: pointer;
+  font-size: 1rem;
   font-weight: 700;
-  background: #1f1f1f;
-  color: white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  color: #fff;
+  background: #222;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
 }
 
 .fest-btn:hover {
   transform: scale(1.08) rotate(-1deg);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.6);
 }
 
 .fest-btn:active {
   transform: scale(0.95);
+  filter: brightness(0.95);
 }
 
-/* Festival colors */
-.diwali { background: linear-gradient(135deg, #ff9800, #ff5722); }
-.holi { background: linear-gradient(135deg, #ff4ecd, #4caf50); }
-.navratri { background: linear-gradient(135deg, #9c27b0, #673ab7); }
-.eid { background: linear-gradient(135deg, #00c853, #009688); }
+/* =========================
+   FESTIVAL COLORS
+   ========================= */
+
+.diwali     { background: linear-gradient(135deg,#ff9800,#ff5722); }
+.holi       { background: linear-gradient(135deg,#ff4ecd,#4caf50); }
+.dussehra   { background: linear-gradient(135deg,#ff1744,#ff9100); }
+.navratri   { background: linear-gradient(135deg,#9c27b0,#673ab7); }
+.bihu       { background: linear-gradient(135deg,#2e7d32,#f9a825); }
+.kumbh      { background: linear-gradient(135deg,#ff9800,#ffcc80); color:#3e2723; }
+.pongal     { background: linear-gradient(135deg,#cddc39,#8bc34a); color:#1b5e20; }
+.onam       { background: linear-gradient(135deg,#1b5e20,#66bb6a); }
+.eid        { background: linear-gradient(135deg,#00c853,#009688); }
+.christmas  { background: linear-gradient(135deg,#2e7d32,#c62828); }
+
+/* =========================
+   FESTIVAL EFFECT CLASSES
+   ========================= */
+
+/* Diwali */
 .diwali-glow {
-  animation: glow 1.5s infinite alternate;
+  animation: diwaliGlow 1.5s infinite alternate;
+}
+@keyframes diwaliGlow {
+  from { box-shadow: inset 0 0 40px rgba(255,152,0,0.45); }
+  to   { box-shadow: inset 0 0 80px rgba(255,87,34,0.65); }
 }
 
-@keyframes glow {
-  from { box-shadow: inset 0 0 40px rgba(255,140,0,0.4); }
-  to { box-shadow: inset 0 0 80px rgba(255,87,34,0.6); }
+/* Holi */
+.holi-splash {
+  position: fixed;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle,#ff0,#f0f,#0f0);
+  pointer-events: none;
+  animation: splash 1s forwards;
+}
+@keyframes splash {
+  to { transform: scale(3); opacity: 0; }
 }
 
+/* Navratri */
 .navratri-shake {
-  animation: shake 0.2s infinite;
+  animation: shake 0.25s infinite;
 }
-
 @keyframes shake {
   0% { transform: rotate(0deg); }
   25% { transform: rotate(1deg); }
@@ -272,3 +315,36 @@ footer {
   75% { transform: rotate(-1deg); }
 }
 
+/* Bihu */
+.bihu-dance {
+  animation: bihuDance 0.6s infinite alternate;
+}
+@keyframes bihuDance {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-4px); }
+}
+.bihu-glow {
+  box-shadow: inset 0 0 60px rgba(249,168,37,0.45);
+}
+
+/* Kumbh */
+.kumbh-glow {
+  box-shadow: inset 0 0 80px rgba(255,152,0,0.45);
+}
+.kumbh-wave {
+  animation: wave 2s infinite ease-in-out;
+}
+@keyframes wave {
+  0% { filter: blur(0px); }
+  50% { filter: blur(1.2px); }
+  100% { filter: blur(0px); }
+}
+
+/* Christmas */
+.snow {
+  animation: snowGlow 2s infinite alternate;
+}
+@keyframes snowGlow {
+  from { box-shadow: inset 0 0 40px rgba(255,255,255,0.25); }
+  to   { box-shadow: inset 0 0 80px rgba(255,255,255,0.45); }
+}
